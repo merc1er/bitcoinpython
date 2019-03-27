@@ -11,6 +11,7 @@ setup(
     version=version,
     description='Bitcoin Cash for Python',
     long_description=open('README.md', 'r').read(),
+    long_description_content_type='text/markdown',
     author='Corentin Mercier',
     author_email='corentin@mercier.link',
     maintainer='Corentin Mercier',
