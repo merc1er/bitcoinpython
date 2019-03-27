@@ -9,7 +9,7 @@ with open('bitcoinpython/__init__.py', 'r') as f:
 setup(
     name='bitcoinpython',
     version=version,
-    description='Bitcoin Cash made easier.',
+    description='Bitcoin Cash for Python',
     long_description=open('README.rst', 'r').read(),
     author='Corentin Mercier',
     author_email='corentin@mercier.link',
