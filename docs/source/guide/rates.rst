@@ -76,11 +76,11 @@ therefore no network calls are needed.
 +=========+======================+
 | satoshi | Satoshi              |
 +---------+----------------------+
-| ubch    | Microbitcoincash         |
+| ubch    | Microbitcoin         |
 +---------+----------------------+
-| mbch    | Millibitcoincash         |
+| mbch    | Millibitcoin         |
 +---------+----------------------+
-| bch     | BitcoinCash              |
+| bch     | Bitcoin Cash         |
 +---------+----------------------+
 | usd     | United States Dollar |
 +---------+----------------------+
