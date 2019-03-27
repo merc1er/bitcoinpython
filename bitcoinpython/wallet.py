@@ -1,14 +1,14 @@
 import json
 
-from bitcash.crypto import ECPrivateKey
-from bitcash.curve import Point
-from bitcash.format import (
+from bitcoinpython.crypto import ECPrivateKey
+from bitcoinpython.curve import Point
+from bitcoinpython.format import (
     bytes_to_wif, public_key_to_address, public_key_to_coords, wif_to_bytes,
     address_to_public_key_hash
 )
-from bitcash.network import NetworkAPI, get_fee, satoshi_to_currency_cached
-from bitcash.network.meta import Unspent
-from bitcash.transaction import (
+from bitcoinpython.network import NetworkAPI, get_fee, satoshi_to_currency_cached
+from bitcoinpython.network.meta import Unspent
+from bitcoinpython.transaction import (
     calc_txid, create_p2pkh_transaction, sanitize_tx_data,
     OP_CHECKSIG, OP_DUP, OP_EQUALVERIFY, OP_HASH160, OP_PUSH_20
     )
@@ -178,8 +178,8 @@ class PrivateKey(BaseKey):
 
     def get_balance(self, currency='satoshi'):
         """Fetches the current balance by calling
-        :func:`~bitcash.PrivateKey.get_unspents` and returns it using
-        :func:`~bitcash.PrivateKey.balance_as`.
+        :func:`~bitcoinpython.PrivateKey.get_unspents` and returns it using
+        :func:`~bitcoinpython.PrivateKey.balance_as`.
 
         :param currency: One of the :ref:`supported currencies`.
         :type currency: ``str``
@@ -191,7 +191,7 @@ class PrivateKey(BaseKey):
     def get_unspents(self):
         """Fetches all available unspent transaction outputs.
 
-        :rtype: ``list`` of :class:`~bitcash.network.meta.Unspent`
+        :rtype: ``list`` of :class:`~bitcoinpython.network.meta.Unspent`
         """
         self.unspents[:] = NetworkAPI.get_unspent(self.address)
         self.balance = sum(unspent.amount for unspent in self.unspents)
@@ -216,25 +216,25 @@ class PrivateKey(BaseKey):
                         must be :ref:`supported <supported currencies>`.
         :type outputs: ``list`` of ``tuple``
         :param fee: The number of satoshi per byte to pay to miners. By default
-                    Bitcash will poll `<https://bitcoincashfees.earn.com>`_ and use a fee
+                    bitcoinpython will poll `<https://bitcoincashfees.earn.com>`_ and use a fee
                     that will allow your transaction to be confirmed as soon as
                     possible.
         :type fee: ``int``
         :param leftover: The destination that will receive any change from the
-                         transaction. By default Bitcash will send any change to
+                         transaction. By default bitcoinpython will send any change to
                          the same address you sent from.
         :type leftover: ``str``
-        :param combine: Whether or not Bitcash should use all available UTXOs to
+        :param combine: Whether or not bitcoinpython should use all available UTXOs to
                         make future transactions smaller and therefore reduce
-                        fees. By default Bitcash will consolidate UTXOs.
+                        fees. By default bitcoinpython will consolidate UTXOs.
         :type combine: ``bool``
         :param message: A message to include in the transaction. This will be
                         stored in the blockchain forever. Due to size limits,
                         each message will be stored in chunks of 220 bytes.
         :type message: ``str``
-        :param unspents: The UTXOs to use as the inputs. By default Bitcash will
+        :param unspents: The UTXOs to use as the inputs. By default bitcoinpython will
                          communicate with the blockchain itself.
-        :type unspents: ``list`` of :class:`~bitcash.network.meta.Unspent`
+        :type unspents: ``list`` of :class:`~bitcoinpython.network.meta.Unspent`
         :returns: The signed transaction as hex.
         :rtype: ``str``
         """
@@ -256,7 +256,7 @@ class PrivateKey(BaseKey):
              message=None, unspents=None):  # pragma: no cover
         """Creates a signed P2PKH transaction and attempts to broadcast it on
         the blockchain. This accepts the same arguments as
-        :func:`~bitcash.PrivateKey.create_transaction`.
+        :func:`~bitcoinpython.PrivateKey.create_transaction`.
 
         :param outputs: A sequence of outputs you wish to send in the form
                         ``(destination, amount, currency)``. The amount can
@@ -265,25 +265,25 @@ class PrivateKey(BaseKey):
                         must be :ref:`supported <supported currencies>`.
         :type outputs: ``list`` of ``tuple``
         :param fee: The number of satoshi per byte to pay to miners. By default
-                    Bitcash will poll `<https://bitcoincashfees.earn.com>`_ and use a fee
+                    bitcoinpython will poll `<https://bitcoincashfees.earn.com>`_ and use a fee
                     that will allow your transaction to be confirmed as soon as
                     possible.
         :type fee: ``int``
         :param leftover: The destination that will receive any change from the
-                         transaction. By default Bitcash will send any change to
+                         transaction. By default bitcoinpython will send any change to
                          the same address you sent from.
         :type leftover: ``str``
-        :param combine: Whether or not Bitcash should use all available UTXOs to
+        :param combine: Whether or not bitcoinpython should use all available UTXOs to
                         make future transactions smaller and therefore reduce
-                        fees. By default Bitcash will consolidate UTXOs.
+                        fees. By default bitcoinpython will consolidate UTXOs.
         :type combine: ``bool``
         :param message: A message to include in the transaction. This will be
                         stored in the blockchain forever. Due to size limits,
                         each message will be stored in chunks of 220 bytes.
         :type message: ``str``
-        :param unspents: The UTXOs to use as the inputs. By default Bitcash will
+        :param unspents: The UTXOs to use as the inputs. By default bitcoinpython will
                          communicate with the blockchain itself.
-        :type unspents: ``list`` of :class:`~bitcash.network.meta.Unspent`
+        :type unspents: ``list`` of :class:`~bitcoinpython.network.meta.Unspent`
         :returns: The transaction ID.
         :rtype: ``str``
         """
@@ -313,25 +313,25 @@ class PrivateKey(BaseKey):
                            compressed public key. This influences the fee.
         :type compressed: ``bool``
         :param fee: The number of satoshi per byte to pay to miners. By default
-                    Bitcash will poll `<https://bitcoincashfees.earn.com>`_ and use a fee
+                    bitcoinpython will poll `<https://bitcoincashfees.earn.com>`_ and use a fee
                     that will allow your transaction to be confirmed as soon as
                     possible.
         :type fee: ``int``
         :param leftover: The destination that will receive any change from the
-                         transaction. By default Bitcash will send any change to
+                         transaction. By default bitcoinpython will send any change to
                          the same address you sent from.
         :type leftover: ``str``
-        :param combine: Whether or not Bitcash should use all available UTXOs to
+        :param combine: Whether or not bitcoinpython should use all available UTXOs to
                         make future transactions smaller and therefore reduce
-                        fees. By default Bitcash will consolidate UTXOs.
+                        fees. By default bitcoinpython will consolidate UTXOs.
         :type combine: ``bool``
         :param message: A message to include in the transaction. This will be
                         stored in the blockchain forever. Due to size limits,
                         each message will be stored in chunks of 220 bytes.
         :type message: ``str``
-        :param unspents: The UTXOs to use as the inputs. By default Bitcash will
+        :param unspents: The UTXOs to use as the inputs. By default bitcoinpython will
                          communicate with the blockchain itself.
-        :type unspents: ``list`` of :class:`~bitcash.network.meta.Unspent`
+        :type unspents: ``list`` of :class:`~bitcoinpython.network.meta.Unspent`
         :returns: JSON storing data required to create an offline transaction.
         :rtype: ``str``
         """
@@ -356,7 +356,7 @@ class PrivateKey(BaseKey):
         """Creates a signed P2PKH transaction using previously prepared
         transaction data.
 
-        :param tx_data: Output of :func:`~bitcash.PrivateKey.prepare_transaction`.
+        :param tx_data: Output of :func:`~bitcoinpython.PrivateKey.prepare_transaction`.
         :type tx_data: ``str``
         :returns: The signed transaction as hex.
         :rtype: ``str``
@@ -373,7 +373,7 @@ class PrivateKey(BaseKey):
         """
         :param hexed: A private key previously encoded as hex.
         :type hexed: ``str``
-        :rtype: :class:`~bitcash.PrivateKey`
+        :rtype: :class:`~bitcoinpython.PrivateKey`
         """
         return PrivateKey(ECPrivateKey.from_hex(hexed))
 
@@ -382,7 +382,7 @@ class PrivateKey(BaseKey):
         """
         :param bytestr: A private key previously encoded as hex.
         :type bytestr: ``bytes``
-        :rtype: :class:`~bitcash.PrivateKey`
+        :rtype: :class:`~bitcoinpython.PrivateKey`
         """
         return PrivateKey(ECPrivateKey(bytestr))
 
@@ -391,7 +391,7 @@ class PrivateKey(BaseKey):
         """
         :param der: A private key previously encoded as DER.
         :type der: ``bytes``
-        :rtype: :class:`~bitcash.PrivateKey`
+        :rtype: :class:`~bitcoinpython.PrivateKey`
         """
         return PrivateKey(ECPrivateKey.from_der(der))
 
@@ -400,7 +400,7 @@ class PrivateKey(BaseKey):
         """
         :param pem: A private key previously encoded as PEM.
         :type pem: ``bytes``
-        :rtype: :class:`~bitcash.PrivateKey`
+        :rtype: :class:`~bitcoinpython.PrivateKey`
         """
         return PrivateKey(ECPrivateKey.from_pem(pem))
 
@@ -409,7 +409,7 @@ class PrivateKey(BaseKey):
         """
         :param num: A private key in raw integer form.
         :type num: ``int``
-        :rtype: :class:`~bitcash.PrivateKey`
+        :rtype: :class:`~bitcoinpython.PrivateKey`
         """
         return PrivateKey(ECPrivateKey.from_int(num))
 
@@ -472,8 +472,8 @@ class PrivateKeyTestnet(BaseKey):
 
     def get_balance(self, currency='satoshi'):
         """Fetches the current balance by calling
-        :func:`~bitcash.PrivateKeyTestnet.get_unspents` and returns it using
-        :func:`~bitcash.PrivateKeyTestnet.balance_as`.
+        :func:`~bitcoinpython.PrivateKeyTestnet.get_unspents` and returns it using
+        :func:`~bitcoinpython.PrivateKeyTestnet.balance_as`.
 
         :param currency: One of the :ref:`supported currencies`.
         :type currency: ``str``
@@ -485,7 +485,7 @@ class PrivateKeyTestnet(BaseKey):
     def get_unspents(self):
         """Fetches all available unspent transaction outputs.
 
-        :rtype: ``list`` of :class:`~bitcash.network.meta.Unspent`
+        :rtype: ``list`` of :class:`~bitcoinpython.network.meta.Unspent`
         """
         self.unspents[:] = NetworkAPI.get_unspent_testnet(self.address)
         self.balance = sum(unspent.amount for unspent in self.unspents)
@@ -510,25 +510,25 @@ class PrivateKeyTestnet(BaseKey):
                         must be :ref:`supported <supported currencies>`.
         :type outputs: ``list`` of ``tuple``
         :param fee: The number of satoshi per byte to pay to miners. By default
-                    Bitcash will poll `<https://bitcoincashfees.earn.com>`_ and use a fee
+                    bitcoinpython will poll `<https://bitcoincashfees.earn.com>`_ and use a fee
                     that will allow your transaction to be confirmed as soon as
                     possible.
         :type fee: ``int``
         :param leftover: The destination that will receive any change from the
-                         transaction. By default Bitcash will send any change to
+                         transaction. By default bitcoinpython will send any change to
                          the same address you sent from.
         :type leftover: ``str``
-        :param combine: Whether or not Bitcash should use all available UTXOs to
+        :param combine: Whether or not bitcoinpython should use all available UTXOs to
                         make future transactions smaller and therefore reduce
-                        fees. By default Bitcash will consolidate UTXOs.
+                        fees. By default bitcoinpython will consolidate UTXOs.
         :type combine: ``bool``
         :param message: A message to include in the transaction. This will be
                         stored in the blockchain forever. Due to size limits,
                         each message will be stored in chunks of 220 bytes.
         :type message: ``str``
-        :param unspents: The UTXOs to use as the inputs. By default Bitcash will
+        :param unspents: The UTXOs to use as the inputs. By default bitcoinpython will
                          communicate with the testnet blockchain itself.
-        :type unspents: ``list`` of :class:`~bitcash.network.meta.Unspent`
+        :type unspents: ``list`` of :class:`~bitcoinpython.network.meta.Unspent`
         :returns: The signed transaction as hex.
         :rtype: ``str``
         """
@@ -550,7 +550,7 @@ class PrivateKeyTestnet(BaseKey):
              message=None, unspents=None):
         """Creates a signed P2PKH transaction and attempts to broadcast it on
         the testnet blockchain. This accepts the same arguments as
-        :func:`~bitcash.PrivateKeyTestnet.create_transaction`.
+        :func:`~bitcoinpython.PrivateKeyTestnet.create_transaction`.
 
         :param outputs: A sequence of outputs you wish to send in the form
                         ``(destination, amount, currency)``. The amount can
@@ -559,25 +559,25 @@ class PrivateKeyTestnet(BaseKey):
                         must be :ref:`supported <supported currencies>`.
         :type outputs: ``list`` of ``tuple``
         :param fee: The number of satoshi per byte to pay to miners. By default
-                    Bitcash will poll `<https://bitcoincashfees.earn.com>`_ and use a fee
+                    bitcoinpython will poll `<https://bitcoincashfees.earn.com>`_ and use a fee
                     that will allow your transaction to be confirmed as soon as
                     possible.
         :type fee: ``int``
         :param leftover: The destination that will receive any change from the
-                         transaction. By default Bitcash will send any change to
+                         transaction. By default bitcoinpython will send any change to
                          the same address you sent from.
         :type leftover: ``str``
-        :param combine: Whether or not Bitcash should use all available UTXOs to
+        :param combine: Whether or not bitcoinpython should use all available UTXOs to
                         make future transactions smaller and therefore reduce
-                        fees. By default Bitcash will consolidate UTXOs.
+                        fees. By default bitcoinpython will consolidate UTXOs.
         :type combine: ``bool``
         :param message: A message to include in the transaction. This will be
                         stored in the blockchain forever. Due to size limits,
                         each message will be stored in chunks of 220 bytes.
         :type message: ``str``
-        :param unspents: The UTXOs to use as the inputs. By default Bitcash will
+        :param unspents: The UTXOs to use as the inputs. By default bitcoinpython will
                          communicate with the testnet blockchain itself.
-        :type unspents: ``list`` of :class:`~bitcash.network.meta.Unspent`
+        :type unspents: ``list`` of :class:`~bitcoinpython.network.meta.Unspent`
         :returns: The transaction ID.
         :rtype: ``str``
         """
@@ -607,25 +607,25 @@ class PrivateKeyTestnet(BaseKey):
                            compressed public key. This influences the fee.
         :type compressed: ``bool``
         :param fee: The number of satoshi per byte to pay to miners. By default
-                    Bitcash will poll `<https://bitcoincashfees.earn.com>`_ and use a fee
+                    bitcoinpython will poll `<https://bitcoincashfees.earn.com>`_ and use a fee
                     that will allow your transaction to be confirmed as soon as
                     possible.
         :type fee: ``int``
         :param leftover: The destination that will receive any change from the
-                         transaction. By default Bitcash will send any change to
+                         transaction. By default bitcoinpython will send any change to
                          the same address you sent from.
         :type leftover: ``str``
-        :param combine: Whether or not Bitcash should use all available UTXOs to
+        :param combine: Whether or not bitcoinpython should use all available UTXOs to
                         make future transactions smaller and therefore reduce
-                        fees. By default Bitcash will consolidate UTXOs.
+                        fees. By default bitcoinpython will consolidate UTXOs.
         :type combine: ``bool``
         :param message: A message to include in the transaction. This will be
                         stored in the blockchain forever. Due to size limits,
                         each message will be stored in chunks of 220 bytes.
         :type message: ``str``
-        :param unspents: The UTXOs to use as the inputs. By default Bitcash will
+        :param unspents: The UTXOs to use as the inputs. By default bitcoinpython will
                          communicate with the blockchain itself.
-        :type unspents: ``list`` of :class:`~bitcash.network.meta.Unspent`
+        :type unspents: ``list`` of :class:`~bitcoinpython.network.meta.Unspent`
         :returns: JSON storing data required to create an offline transaction.
         :rtype: ``str``
         """
@@ -650,7 +650,7 @@ class PrivateKeyTestnet(BaseKey):
         """Creates a signed P2PKH transaction using previously prepared
         transaction data.
 
-        :param tx_data: Output of :func:`~bitcash.PrivateKeyTestnet.prepare_transaction`.
+        :param tx_data: Output of :func:`~bitcoinpython.PrivateKeyTestnet.prepare_transaction`.
         :type tx_data: ``str``
         :returns: The signed transaction as hex.
         :rtype: ``str``
@@ -667,7 +667,7 @@ class PrivateKeyTestnet(BaseKey):
         """
         :param hexed: A private key previously encoded as hex.
         :type hexed: ``str``
-        :rtype: :class:`~bitcash.PrivateKeyTestnet`
+        :rtype: :class:`~bitcoinpython.PrivateKeyTestnet`
         """
         return PrivateKeyTestnet(ECPrivateKey.from_hex(hexed))
 
@@ -676,7 +676,7 @@ class PrivateKeyTestnet(BaseKey):
         """
         :param bytestr: A private key previously encoded as hex.
         :type bytestr: ``bytes``
-        :rtype: :class:`~bitcash.PrivateKeyTestnet`
+        :rtype: :class:`~bitcoinpython.PrivateKeyTestnet`
         """
         return PrivateKeyTestnet(ECPrivateKey(bytestr))
 
@@ -685,7 +685,7 @@ class PrivateKeyTestnet(BaseKey):
         """
         :param der: A private key previously encoded as DER.
         :type der: ``bytes``
-        :rtype: :class:`~bitcash.PrivateKeyTestnet`
+        :rtype: :class:`~bitcoinpython.PrivateKeyTestnet`
         """
         return PrivateKeyTestnet(ECPrivateKey.from_der(der))
 
@@ -694,7 +694,7 @@ class PrivateKeyTestnet(BaseKey):
         """
         :param pem: A private key previously encoded as PEM.
         :type pem: ``bytes``
-        :rtype: :class:`~bitcash.PrivateKeyTestnet`
+        :rtype: :class:`~bitcoinpython.PrivateKeyTestnet`
         """
         return PrivateKeyTestnet(ECPrivateKey.from_pem(pem))
 
@@ -703,7 +703,7 @@ class PrivateKeyTestnet(BaseKey):
         """
         :param num: A private key in raw integer form.
         :type num: ``int``
-        :rtype: :class:`~bitcash.PrivateKeyTestnet`
+        :rtype: :class:`~bitcoinpython.PrivateKeyTestnet`
         """
         return PrivateKeyTestnet(ECPrivateKey.from_int(num))
 

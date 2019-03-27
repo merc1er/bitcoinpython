@@ -3,8 +3,8 @@
 Fees
 ====
 
-Bitcash provides a convenient way to get recommended satoshi/byte fees in the
-form of :func:`~bitcash.network.get_fee` and :func:`~bitcash.network.get_fee_cached`,
+bitcoinpython provides a convenient way to get recommended satoshi/byte fees in the
+form of :func:`~bitcoinpython.network.get_fee` and :func:`~bitcoinpython.network.get_fee_cached`,
 the latter of which will cache results for 10 minutes
 :ref:`by default <cache times>`. Currently, the only service in
 use is `<https://bitcoincashfees.earn.com>`_.
@@ -18,7 +18,7 @@ probability)".
 
 .. code-block:: python
 
-    >>> from bitcash.network import get_fee, get_fee_cached
+    >>> from bitcoinpython.network import get_fee, get_fee_cached
     >>>
     >>> get_fee(fast=False)
     180
@@ -29,7 +29,7 @@ If recommended fee services are unreachable, hard-coded defaults will be used.
 
 .. code-block:: python
 
-    >>> from bitcash.network import fees
+    >>> from bitcoinpython.network import fees
     >>>
     >>> fees.DEFAULT_FEE_FAST
     220

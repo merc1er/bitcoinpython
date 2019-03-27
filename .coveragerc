@@ -1,11 +1,11 @@
 [run]
 source =
-    bitcash
+    bitcoinpython
     tests/
 branch = True
 omit =
-    bitcash/cli.py
-    bitcash/keygen.py
+    bitcoinpython/cli.py
+    bitcoinpython/keygen.py
 
 [report]
 exclude_lines =

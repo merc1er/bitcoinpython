@@ -1,6 +1,6 @@
 # BitcoinPy: Bitcoin Cash Python library
 
-Forked from Ofek's Bit and Teran McKinney's BitCash.
+Forked from Ofek's Bit and Teran McKinney's bitcash.
 
 #### BitcoinPy is so easy to use, in fact, you can do this:
 
@@ -53,4 +53,4 @@ $ pip3 install bitcoinpython
 
 - [ofek](https://github.com/ofek/bit) for the original bit codebase
 - [teran-mckinney](https://github.com/sporestack/bitcash) for the bitcash fork
-- [bjarnemagnussen](https://github.com/bjarnemagnussen/bitcash/tree/segwit) for his segwit code for the necessary BIP-143 support
+- [bjarnemagnussen](https://github.com/bjarnemagnussen/bit/tree/segwit) for his segwit code for the necessary BIP-143 support

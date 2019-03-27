@@ -3,16 +3,16 @@
 Exchange Rates
 ==============
 
-Bitcash gets exchange rate data from trusted third-party APIs. Specifically,
+bitcoinpython gets exchange rate data from trusted third-party APIs. Specifically,
 it can access:
 
-- `<https://bitcashpay.com/bitcoincash-exchange-rates>`_ via :class:`~bitcash.network.rates.BitpayRates`
-- `<https://blockchain.info/api/exchange_rates_api>`_ via :class:`~bitcash.network.rates.BlockchainRates`
+- `<https://bitcoinpythonpay.com/bitcoincash-exchange-rates>`_ via :class:`~bitcoinpython.network.rates.BitpayRates`
+- `<https://blockchain.info/api/exchange_rates_api>`_ via :class:`~bitcoinpython.network.rates.BlockchainRates`
 
 RatesAPI
 --------
 
-Core operations use :class:`~bitcash.network.rates.RatesAPI`. For each method,
+Core operations use :class:`~bitcoinpython.network.rates.RatesAPI`. For each method,
 it polls a service and if an error occurs it tries another.
 
 You will likely never use this directly.
@@ -20,12 +20,12 @@ You will likely never use this directly.
 Currency to Satoshi
 -------------------
 
-Bitcash exposes 2 ways to convert a given amount of currency to the equivalent
-number of satoshi: :func:`~bitcash.network.currency_to_satoshi` and
-:func:`~bitcash.network.currency_to_satoshi_cached`. The latter function will
+bitcoinpython exposes 2 ways to convert a given amount of currency to the equivalent
+number of satoshi: :func:`~bitcoinpython.network.currency_to_satoshi` and
+:func:`~bitcoinpython.network.currency_to_satoshi_cached`. The latter function will
 cache results for 1 minute :ref:`by default <cache times>`.
 
-Bitcash uses :func:`~bitcash.network.currency_to_satoshi_cached` in transactions to convert the
+bitcoinpython uses :func:`~bitcoinpython.network.currency_to_satoshi_cached` in transactions to convert the
 amount in each output to spendable satoshi.
 
 To illustrate, here is how your outputs in `(destination, amount, currency)`
@@ -34,7 +34,7 @@ transactions:
 
 .. code-block:: python
 
-    >>> from bitcash.network import currency_to_satoshi_cached
+    >>> from bitcoinpython.network import currency_to_satoshi_cached
     >>>
     >>> ...
     >>> for i, output in enumerate(outputs):
@@ -45,12 +45,12 @@ Satoshi to Currency
 -------------------
 
 Converting satoshi to another currency as a formatted string can be done using
-:func:`~bitcash.network.satoshi_to_currency` or :func:`~bitcash.network.satoshi_to_currency_cached`.
+:func:`~bitcoinpython.network.satoshi_to_currency` or :func:`~bitcoinpython.network.satoshi_to_currency_cached`.
 The result will be rounded down to the proper number of decimal places for each currency.
 
 .. code-block:: python
 
-    >>> from bitcash.network import satoshi_to_currency_cached
+    >>> from bitcoinpython.network import satoshi_to_currency_cached
     >>>
     >>> satoshi_to_currency_cached(56789, 'usd')
     '0.59'
@@ -62,13 +62,13 @@ The result will be rounded down to the proper number of decimal places for each 
 Supported Currencies
 --------------------
 
-These are all the currencies currently supported by Bitcash. Note that converting
+These are all the currencies currently supported by bitcoinpython. Note that converting
 satoshi to itself, ubch, mbch, or bch never requires exchange rate data and
 therefore no network calls are needed.
 
 .. code-block:: python
 
-    >>> from bitcash import SUPPORTED_CURRENCIES
+    >>> from bitcoinpython import SUPPORTED_CURRENCIES
     >>> print(SUPPORTED_CURRENCIES)
 
 +---------+----------------------+
@@ -130,6 +130,6 @@ therefore no network calls are needed.
 Unsupported Currencies
 ----------------------
 
-If you need to use currencies in your :ref:`transactions` that Bitcash does not
+If you need to use currencies in your :ref:`transactions` that bitcoinpython does not
 support, convert it yourself to satoshi, ubch, mbch, or bch as these are
 supported natively.

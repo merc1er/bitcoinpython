@@ -10,7 +10,7 @@ setup(
     name='bitcoinpython',
     version=version,
     description='Bitcoin Cash for Python',
-    long_description=open('README.rst', 'r').read(),
+    long_description=open('README.md', 'r').read(),
     author='Corentin Mercier',
     author_email='corentin@mercier.link',
     maintainer='Corentin Mercier',

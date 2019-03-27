@@ -4,9 +4,9 @@ import requests
 from cashaddress import convert as cashaddress
 from decimal import Decimal
 
-from bitcash.network import currency_to_satoshi
-from bitcash.network.meta import Unspent
-from bitcash.network.transaction import Transaction, TxPart
+from bitcoinpython.network import currency_to_satoshi
+from bitcoinpython.network.meta import Unspent
+from bitcoinpython.network.transaction import Transaction, TxPart
 
 DEFAULT_TIMEOUT = 30
 
@@ -427,7 +427,7 @@ class NetworkAPI:
         :param address: The address in question.
         :type address: ``str``
         :raises ConnectionError: If all API services fail.
-        :rtype: ``list`` of :class:`~bitcash.network.meta.Unspent`
+        :rtype: ``list`` of :class:`~bitcoinpython.network.meta.Unspent`
         """
 
         for api_call in cls.GET_UNSPENT_MAIN:
@@ -446,7 +446,7 @@ class NetworkAPI:
         :param address: The address in question.
         :type address: ``str``
         :raises ConnectionError: If all API services fail.
-        :rtype: ``list`` of :class:`~bitcash.network.meta.Unspent`
+        :rtype: ``list`` of :class:`~bitcoinpython.network.meta.Unspent`
         """
 
         for api_call in cls.GET_UNSPENT_TEST:

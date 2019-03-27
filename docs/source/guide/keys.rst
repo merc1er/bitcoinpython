@@ -3,7 +3,7 @@
 Keys
 ====
 
-Bitcash assumes the easiest way to reason about BitcoinCash is in the basic unit of a
+bitcoinpython assumes the easiest way to reason about BitcoinCash is in the basic unit of a
 `private key`_ and, therefore, all functionality (viewing balance, making
 transactions, etc.) is wrapped up in this class for convenience. You shouldn't
 have to use anything else.
@@ -23,13 +23,13 @@ on the curve from that value.
 Types
 -----
 
-Bitcash defines 2 kinds of private keys: :class:`~bitcash.PrivateKey`, aliased as
-simply :class:`~bitcash.Key`, and :class:`~bitcash.PrivateKeyTestnet`. Both classes
+bitcoinpython defines 2 kinds of private keys: :class:`~bitcoinpython.PrivateKey`, aliased as
+simply :class:`~bitcoinpython.Key`, and :class:`~bitcoinpython.PrivateKeyTestnet`. Both classes
 have the exact same functionality.
 
 .. code-block:: python
 
-    >>> from bitcash import Key, PrivateKey, PrivateKeyTestnet
+    >>> from bitcoinpython import Key, PrivateKey, PrivateKeyTestnet
     >>>
     >>> Key == PrivateKey
     True
@@ -37,7 +37,7 @@ have the exact same functionality.
     >>> dir(Key) == dir(PrivateKeyTestnet)
     True
 
-The only difference is the network operations for :class:`~bitcash.PrivateKeyTestnet`
+The only difference is the network operations for :class:`~bitcoinpython.PrivateKeyTestnet`
 will use BitcoinCash's test network where coins have no value. As such, the derived
 address will also be different.
 
@@ -48,7 +48,7 @@ Creation of a new private key is as simple as:
 
 .. code-block:: python
 
-    >>> from bitcash import Key
+    >>> from bitcoinpython import Key
     >>> key = Key()
 
 Public Point
@@ -87,7 +87,7 @@ derive your address and is needed in the construction of every transaction.
 Address
 -------
 
-All keys possess an :func:`~bitcash.PrivateKey.address` property which is derived from your public key:
+All keys possess an :func:`~bitcoinpython.PrivateKey.address` property which is derived from your public key:
 
 .. code-block:: python
 
@@ -128,7 +128,7 @@ want to force the use of a particular class, you can do this:
 
 .. code-block:: python
 
-    >>> from bitcash import wif_to_key
+    >>> from bitcoinpython import wif_to_key
     >>>
     >>> key = wif_to_key('cU6s7jckL3bZUUkb3Q2CD9vNu8F1o58K5R5a3JFtidoccMbhEGKZ')
     >>> print(key)

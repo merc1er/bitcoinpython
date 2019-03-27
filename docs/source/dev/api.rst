@@ -3,85 +3,85 @@
 Developer Interface
 ===================
 
-.. module:: bitcash
+.. module:: bitcoinpython
 
 .. _keysapi:
 
 Keys
 ----
 
-.. autoclass:: bitcash.Key
+.. autoclass:: bitcoinpython.Key
 
-.. autoclass:: bitcash.PrivateKey
+.. autoclass:: bitcoinpython.PrivateKey
     :members:
     :undoc-members:
     :inherited-members:
 
-.. autoclass:: bitcash.PrivateKeyTestnet
+.. autoclass:: bitcoinpython.PrivateKeyTestnet
     :members:
     :undoc-members:
     :inherited-members:
 
-.. autoclass:: bitcash.wallet.BaseKey
+.. autoclass:: bitcoinpython.wallet.BaseKey
     :members:
     :undoc-members:
 
 Network
 -------
 
-.. autoclass:: bitcash.network.NetworkAPI
+.. autoclass:: bitcoinpython.network.NetworkAPI
     :members:
     :undoc-members:
 
-.. autoclass:: bitcash.network.services.BitpayAPI
+.. autoclass:: bitcoinpython.network.services.BitpayAPI
     :members:
     :undoc-members:
     :inherited-members:
 
-.. autoclass:: bitcash.network.services.BlockchainAPI
+.. autoclass:: bitcoinpython.network.services.BlockchainAPI
     :members:
     :undoc-members:
 
-.. autoclass:: bitcash.network.services.SmartbitcashAPI
+.. autoclass:: bitcoinpython.network.services.SmartbitcoinpythonAPI
     :members:
     :undoc-members:
 
-.. autoclass:: bitcash.network.meta.Unspent
+.. autoclass:: bitcoinpython.network.meta.Unspent
     :members:
     :undoc-members:
 
 Exchange Rates
 --------------
 
-.. autofunction:: bitcash.network.currency_to_satoshi
-.. autofunction:: bitcash.network.currency_to_satoshi_cached
-.. autofunction:: bitcash.network.satoshi_to_currency
-.. autofunction:: bitcash.network.satoshi_to_currency_cached
+.. autofunction:: bitcoinpython.network.currency_to_satoshi
+.. autofunction:: bitcoinpython.network.currency_to_satoshi_cached
+.. autofunction:: bitcoinpython.network.satoshi_to_currency
+.. autofunction:: bitcoinpython.network.satoshi_to_currency_cached
 
-.. autoclass:: bitcash.network.rates.RatesAPI
+.. autoclass:: bitcoinpython.network.rates.RatesAPI
     :members:
     :undoc-members:
 
-.. autoclass:: bitcash.network.rates.BitpayRates
+.. autoclass:: bitcoinpython.network.rates.BitpayRates
     :members:
     :undoc-members:
 
-.. autoclass:: bitcash.network.rates.BlockchainRates
+.. autoclass:: bitcoinpython.network.rates.BlockchainRates
     :members:
     :undoc-members:
 
 Fees
 ----
 
-.. autofunction:: bitcash.network.get_fee
-.. autofunction:: bitcash.network.get_fee_cached
+.. autofunction:: bitcoinpython.network.get_fee
+.. autofunction:: bitcoinpython.network.get_fee_cached
 
 Utilities
 ---------
 
-.. autofunction:: bitcash.verify_sig
+.. autofunction:: bitcoinpython.verify_sig
 
 Exceptions
 ----------
 
-.. autoexception:: bitcash.exceptions.InsufficientFunds
+.. autoexception:: bitcoinpython.exceptions.InsufficientFunds

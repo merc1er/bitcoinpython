@@ -1,7 +1,7 @@
 Release History
 ===============
 
-Unreleased (see `master <https://github.com/ofek/bitcash>`_)
+Unreleased (see `master <https://github.com/ofek/bit>`_)
 --------------------------------------------------------
 
 - Add a get_transaction() function to network services that
@@ -61,7 +61,7 @@ Unreleased (see `master <https://github.com/ofek/bitcash>`_)
   in an order of magnitude faster key creation and signing/verifying.
 - Improved performance of base58 encoding/decoding.
 - **Breaking:** Dropped support for Python 3.3 & 3.4.
-- **Breaking:** :func:`~bitcash.verify_sig` now returns ``False`` for invalid
+- **Breaking:** :func:`~bit.verify_sig` now returns ``False`` for invalid
   signatures instead of raising an exception. Also, ``strict`` is no longer
   a parameter as BIP-62 compliance is now required.
 
@@ -82,7 +82,7 @@ Unreleased (see `master <https://github.com/ofek/bitcash>`_)
 ------------------
 
 - Improved stability of network tests.
-- Added :func:`~bitcash.verify_sig`.
+- Added :func:`~bit.verify_sig`.
 - Refactored crypto to yield over an order of magnitude faster hashing.
 
 0.1.0 (2017-03-15)

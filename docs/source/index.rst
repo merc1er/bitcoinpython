@@ -1,36 +1,36 @@
-Bitcash: BitcoinCash made easy.
+bitcoinpython: BitcoinCash made easy.
 =======================
 
 Version |version|.
 
-.. image:: https://img.shields.io/pypi/v/bitcash.svg?style=flat-square
-    :target: https://pypi.org/project/bitcash
+.. image:: https://img.shields.io/pypi/v/bitcoinpython.svg?style=flat-square
+    :target: https://pypi.org/project/bitcoinpython
 
-.. image:: https://img.shields.io/travis/ofek/bitcash.svg?branch=master&style=flat-square
-    :target: https://travis-ci.org/ofek/bitcash
+.. image:: https://img.shields.io/travis/ofek/bitcoinpython.svg?branch=master&style=flat-square
+    :target: https://travis-ci.org/ofek/bitcoinpython
 
-.. image:: https://img.shields.io/codecov/c/github/ofek/bitcash.svg?style=flat-square
-    :target: https://codecov.io/gh/ofek/bitcash
+.. image:: https://img.shields.io/codecov/c/github/ofek/bitcoinpython.svg?style=flat-square
+    :target: https://codecov.io/gh/ofek/bitcoinpython
 
-.. image:: https://img.shields.io/pypi/pyversions/bitcash.svg?style=flat-square
-    :target: https://pypi.org/project/bitcash
+.. image:: https://img.shields.io/pypi/pyversions/bitcoinpython.svg?style=flat-square
+    :target: https://pypi.org/project/bitcoinpython
 
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
     :target: https://en.wikipedia.org/wiki/MIT_License
 
 -----
 
-Bitcash is Python's `fastest <https://ofek.github.io/bitcash/guide/intro.html#why-bitcash>`_
+bitcoinpython is Python's `fastest <https://ofek.github.io/bitcoinpython/guide/intro.html#why-bitcoinpython>`_
 BitcoinCash library and was designed from the beginning to feel intuitive, be
 effortless to use, and have readable source code. It is heavily inspired by
 `Requests <https://github.com/kennethreitz/requests>`_ and
 `Keras <https://github.com/fchollet/keras>`_.
 
-**Bitcash is so easy to use, in fact, you can do this:**
+**bitcoinpython is so easy to use, in fact, you can do this:**
 
 .. code-block:: python
 
-    >>> from bitcash import Key
+    >>> from bitcoinpython import Key
     >>>
     >>> my_key = Key(...)
     >>> my_key.get_balance('usd')
@@ -75,7 +75,7 @@ User Guide
 ----------
 
 This section will tell you a little about the project, show how to install it,
-and will then walk you through how to use Bitcash with many examples and explanations
+and will then walk you through how to use bitcoinpython with many examples and explanations
 of best practices.
 
 .. toctree::
@@ -93,7 +93,7 @@ of best practices.
 Community
 ---------
 
-Here you will find everything you need to know about the development of Bitcash
+Here you will find everything you need to know about the development of bitcoinpython
 and the community surrounding it.
 
 .. toctree::
@@ -110,7 +110,7 @@ and the community surrounding it.
 Dev Guide
 ---------
 
-Up ahead is Bitcash's API and a few notes about design decisions. Beware the
+Up ahead is bitcoinpython's API and a few notes about design decisions. Beware the
 pedantry, or lack thereof.
 
 .. toctree::
