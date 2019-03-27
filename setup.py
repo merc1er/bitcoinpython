@@ -1,13 +1,13 @@
 from setuptools import find_packages, setup
 
-with open('bitcoinpy/__init__.py', 'r') as f:
+with open('bitcoinpython/__init__.py', 'r') as f:
     for line in f:
         if line.startswith('__version__'):
             version = line.strip().split('= ')[1].strip("'")
             break
 
 setup(
-    name='bitcoinpy',
+    name='bitcoinpython',
     version=version,
     description='Bitcoin Cash made easier.',
     long_description=open('README.rst', 'r').read(),
@@ -15,8 +15,8 @@ setup(
     author_email='corentin@mercier.link',
     maintainer='Corentin Mercier',
     maintainer_email='corentin@mercier.link',
-    url='https://github.com/buymercier/bitcoinpy',
-    download_url='https://github.com/buymercier/bitcoinpy/tarball/{}'.format(version),
+    url='https://github.com/buymercier/bitcoinpython',
+    download_url='https://github.com/buymercier/bitcoinpython/tarball/{}'.format(version),
     license='MIT',
 
     keywords=[
@@ -52,7 +52,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'console_scripts': (
-            'bitcoinpy = bitcoinpy.cli:bitcoinpy',
+            'bitcoinpython = bitcoinpython.cli:bitcoinpython',
         ),
     },
 )
