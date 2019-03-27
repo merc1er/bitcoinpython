@@ -22,7 +22,7 @@ You can clone it like this:
 
 .. code-block:: bash
 
-    $ git clone git://github.com/buymercier/bitcoinpython.git
+    $ git clone git://github.com/merc1er/bitcoinpython.git
 
 .. _PyPI: https://pypi.org/project/bitcoinpython
-.. _here: https://github.com/buymercier/bitcoinpython
+.. _here: https://github.com/merc1er/bitcoinpython

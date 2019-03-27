@@ -6,7 +6,7 @@ Check the following sources often to keep up on new features and other changes.
 GitHub
 ------
 
-The `project page <https://github.com/buymercier/bitcoinpython>`_ on GitHub remains the best
+The `project page <https://github.com/merc1er/bitcoinpython>`_ on GitHub remains the best
 way to track the development of bitcoinpython.
 
 Twitter
