@@ -16,8 +16,8 @@ setup(
     author_email='corentin@mercier.link',
     maintainer='Corentin Mercier',
     maintainer_email='corentin@mercier.link',
-    url='https://github.com/buymercier/bitcoinpython',
-    download_url='https://github.com/buymercier/bitcoinpython/tarball/{}'.format(version),
+    url='https://github.com/merc1er/bitcoinpython',
+    download_url='https://github.com/merc1er/bitcoinpython/tarball/{}'.format(version),
     license='MIT',
 
     keywords=[

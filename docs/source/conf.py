@@ -77,7 +77,7 @@ html_sidebars = {
 # documentation.
 html_theme_options = {
     'show_powered_by': False,
-    'github_user': 'buymercier',
+    'github_user': 'merc1er',
     'github_repo': 'bitcoinpython',
     'github_banner': True,
     'show_related': False

@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://blurry.cash">
-    <img src="https://github.com/BUYMERCIER/bitcoinpython/raw/master/docs/source/_static/bitcoinpython.png" width="90" height="90">
+    <img src="https://github.com/merc1er/bitcoinpython/raw/master/docs/source/_static/bitcoinpython.png" width="90" height="90">
   </a>
 </p>
 
