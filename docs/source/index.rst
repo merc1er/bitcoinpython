@@ -1,16 +1,10 @@
-bitcoinpython: BitcoinCash made easy.
+BitcoinPython: Bitcoin Cash for Python
 =======================
 
 Version |version|.
 
 .. image:: https://img.shields.io/pypi/v/bitcoinpython.svg?style=flat-square
     :target: https://pypi.org/project/bitcoinpython
-
-.. image:: https://img.shields.io/travis/ofek/bitcoinpython.svg?branch=master&style=flat-square
-    :target: https://travis-ci.org/ofek/bitcoinpython
-
-.. image:: https://img.shields.io/codecov/c/github/ofek/bitcoinpython.svg?style=flat-square
-    :target: https://codecov.io/gh/ofek/bitcoinpython
 
 .. image:: https://img.shields.io/pypi/pyversions/bitcoinpython.svg?style=flat-square
     :target: https://pypi.org/project/bitcoinpython
@@ -20,38 +14,35 @@ Version |version|.
 
 -----
 
-bitcoinpython is Python's `fastest <https://ofek.github.io/bitcoinpython/guide/intro.html#why-bitcoinpython>`_
-BitcoinCash library and was designed from the beginning to feel intuitive, be
+BitcoinPython is Python's `fastest <guide/intro.html#why-bitcoinpython>`_
+Bitcoin Cash library and was designed from the beginning to feel intuitive, be
 effortless to use, and have readable source code. It is heavily inspired by
 `Requests <https://github.com/kennethreitz/requests>`_ and
 `Keras <https://github.com/fchollet/keras>`_.
 
-**bitcoinpython is so easy to use, in fact, you can do this:**
+**BitcoinPython is so easy to use, in fact, you can do this:**
 
 .. code-block:: python
 
     >>> from bitcoinpython import Key
     >>>
-    >>> my_key = Key(...)
-    >>> my_key.get_balance('usd')
-    '12.51'
+    >>> k = Key()
+    >>> k.address
+    'bitcoincash:qp0hamw9rpyllkmvd8047w9em3yt9fytsunyhutucx'
     >>>
-    >>> # Let's donate!
+    >>> k.get_balance('usd')
+    '2'
+    >>>
+    >>> # Let's donate a dollar to CoinSpice.io
     >>> outputs = [
-    >>>     # Wikileaks
-    >>>     ('1HB5XMLmzFVj8ALj6mfBsbifRoD4miY36v', 0.0035, 'bch'),
-    >>>     # Internet Archive
-    >>>     ('1Archive1n2C579dMsAu3iC6tWzuQJz8dN', 190, 'jpy'),
-    >>>     # The Pirate Bay
-    >>>     ('129TQVAroeehD9fZpzK51NdZGQT4TqifbG', 3, 'eur'),
-    >>>     # xkcd
-    >>>     ('14Tr4HaKkKuC1Lmpr2YMAuYVZRWqAdRTcr', 2.5, 'cad')
+    >>>     ('bitcoincash:qz69e5y8yrtujhsyht7q9xq5zhu4mrklmv0ap7tq5f', 1, 'usd'),
+    >>>     # you can add more recipients here
     >>> ]
     >>>
-    >>> my_key.send(outputs)
-    '9f59f5c6757ec46fdc7440acbeb3920e614c8d1d247ac174eb6781b832710c1c'
+    >>> k.send(outputs)
+    '6aea7b1c687d976644a430a87e34c93a8a7fd52d77c30e9cc247fc8228b749ff'
 
-Here is the transaction `<https://blockchain.info/tx/9f59f5c6757ec46fdc7440acbeb3920e614c8d1d247ac174eb6781b832710c1c>`_.
+Here is the transaction `<https://explorer.bitcoin.com/bch/tx/6aea7b1c687d976644a430a87e34c93a8a7fd52d77c30e9cc247fc8228b749ff>`_.
 
 Features
 --------
@@ -62,9 +53,8 @@ Features
 - Fully supports 25 different currencies
 - First class support for storing data in the blockchain
 - Deterministic signatures via RFC 6979
-- Access to the blockchain (and testnet chain) through multiple APIs for redundancy
+- Access to the blockchain through multiple APIs for redundancy
 - Exchange rate API, with optional caching
-- Optimal transaction fee API, with optional caching
 - Compressed public keys by default
 - Multiple representations of private keys; WIF, PEM, DER, etc.
 - Standard P2PKH transactions
@@ -117,6 +107,3 @@ pedantry, or lack thereof.
     :maxdepth: 2
 
     dev/api
-
-Well done! There will be more soon, but right now you have nothing left to see.
-Remember, `a watched pot never boils <https://www.youtube.com/watch?v=EPr-JrW-a8o>`_.
