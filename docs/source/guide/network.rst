@@ -111,9 +111,8 @@ Services
 bitcoinpython communicates with the blockchain using trusted third-party APIs.
 Specifically, it can access:
 
-- `<https://insight.bitcoinpythonpay.com>`_ via :class:`~bitcoinpython.network.services.BitpayAPI`
+- `<https://insight.bitpay.com>`_ via :class:`~bitcoinpython.network.services.BitpayAPI`
 - `<https://blockchain.info>`_ via :class:`~bitcoinpython.network.services.BlockchainAPI`
-- `<https://smartbitcoinpython.com.au>`_ via :class:`~bitcoinpython.network.services.SmartbitcoinpythonAPI`
 
 NetworkAPI
 ^^^^^^^^^^

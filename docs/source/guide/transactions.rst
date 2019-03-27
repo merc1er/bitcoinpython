@@ -19,7 +19,7 @@ The only required argument is a list of outputs.
 
 .. code-block:: python
 
-    >>> key.create_transaction([('1Archive1n2C579dMsAu3iC6tWzuQJz8dN', 190, 'jpy')])
+    >>> key.create_transaction([('bitcoincash:qqrxvhnn88gmpczyxry254vcsnl6canmkqgt98lpn5', 190, 'jpy')])
 
 Output Format
 -------------
@@ -63,9 +63,6 @@ Fee
     transactions to be verified quickly."
 
     -- Coinbase
-
-By default, bitcoinpython will poll `<https://bitcoincashfees.earn.com>`_ and use a fee that
-will allow your transaction to be confirmed as soon as possible.
 
 You can change the satoshi per byte fee like so:
 
@@ -136,5 +133,5 @@ or
 Each item must be an instance of :class:`~bitcoinpython.network.meta.Unspent`.
 
 .. _decimal.Decimal: https://docs.python.org/3/library/decimal.html#decimal.Decimal
-.. _read this: https://blog.blockchain.com/2016/12/15/bitcoincash-transaction-fees-what-are-they-why-should-you-care
+.. _read this: https://blog.blockchain.com/2016/12/15/bitcoin-transaction-fees-what-are-they-why-should-you-care
 .. _unspent transaction output: https://en.bitcoin.it/wiki/Transaction#Input

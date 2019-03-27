@@ -1,12 +1,6 @@
 Development
 ===========
 
-Oversight
----------
-
-`Ofek Lev <https://github.com/ofek>`_, who is also the only current maintainer,
-has the final say regarding any new features or API changes.
-
 Philosophy
 ----------
 
@@ -19,8 +13,7 @@ Continuous Integration
 ----------------------
 
 `Travis CI`_ is used for testing and `Codecov`_ is used for detailing code
-coverage. No pull request will be merged without passing the test suite and
-achieving 100% code coverage.
+coverage.
 
 Documentation
 -------------

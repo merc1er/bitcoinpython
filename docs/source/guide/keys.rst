@@ -92,7 +92,7 @@ All keys possess an :func:`~bitcoinpython.PrivateKey.address` property which is 
 .. code-block:: python
 
     >>> key.address
-    '1KF3Vas28f5tnt3rj2fWyR89V9MPw51xhX'
+    'bitcoincash:qqrxvhnn88gmpczyxry254vcsnl6canmkqgt98lpn5'
 
 This is what you share with others to receive payments.
 
@@ -143,7 +143,7 @@ Import:
 
     >>> key = Key.from_hex('c28a9f80738f770d527803a566cf6fc3edf6cea586c4fc4a5223a5ad797e1ac3')
     >>> key.address
-    '1ExJJsNLQDNVVM1s1sdyt1o5P3GC5r32UG'
+    'bitcoincash:qqrxvhnn88gmpczyxry254vcsnl6canmkqgt98lpn5'
 
 Export:
 
@@ -162,7 +162,7 @@ Import:
 
     >>> key = Key.from_int(87993618360805341115891506172036624893404292644470266399436498750715784469187)
     >>> key.address
-    '1ExJJsNLQDNVVM1s1sdyt1o5P3GC5r32UG'
+    'bitcoincash:qqrxvhnn88gmpczyxry254vcsnl6canmkqgt98lpn5'
 
 Export:
 
@@ -181,7 +181,7 @@ Import:
 
     >>> key = Key.from_pem(...)
     >>> key.address
-    '1ExJJsNLQDNVVM1s1sdyt1o5P3GC5r32UG'
+    'bitcoincash:qqrxvhnn88gmpczyxry254vcsnl6canmkqgt98lpn5'
 
 Export:
 
@@ -200,7 +200,7 @@ Import:
 
     >>> key = Key.from_der(...)
     >>> key.address
-    '1ExJJsNLQDNVVM1s1sdyt1o5P3GC5r32UG'
+    'bitcoincash:qqrxvhnn88gmpczyxry254vcsnl6canmkqgt98lpn5'
 
 Export:
 
