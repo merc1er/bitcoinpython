@@ -4,4 +4,4 @@ from bitcoinpython.network.services import set_service_timeout
 from bitcoinpython.wallet import Key, PrivateKey, PrivateKeyTestnet, wif_to_key
 
 name = 'bitcoinpython'
-__version__ = '0.5.2.7'
+__version__ = '0.5.2.8'
