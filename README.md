@@ -1,8 +1,15 @@
-# BitcoinPy: Bitcoin Cash Python library
+<p align="center">
+  <a href="https://blurry.cash">
+    <img src="docs/source/_static/bitcoinpython.png" width="90" height="90">
+  </a>
+</p>
 
-Forked from Ofek's Bit and Teran McKinney's bitcash.
+<h3 align="center">BitcoinPython</h3>
+<h4 align="center">Bitcoin Cash Python library</h4>
 
-#### BitcoinPy is so easy to use, in fact, you can do this:
+## Quickstart
+
+BitcoinPython is so easy to use, in fact, you can do this:
 
 ```python
 >>> from bitcoinpython import Key
@@ -50,6 +57,8 @@ $ pip3 install bitcoinpython
 ```
 
 ## Credits
+
+Forked from Ofek's Bit and Teran McKinney's bitcash
 
 - [ofek](https://github.com/ofek/bit) for the original bit codebase
 - [teran-mckinney](https://github.com/sporestack/bitcash) for the bitcash fork
