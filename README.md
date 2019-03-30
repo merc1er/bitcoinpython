@@ -11,6 +11,7 @@
   <img src="https://img.shields.io/pypi/v/bitcoinpython.svg?style=flat-square" alt="BitcoinPython version">
   <img src="https://img.shields.io/pypi/pyversions/bitcoinpython.svg?style=flat-square" alt="Python Versions">
   <img src="https://travis-ci.org/merc1er/bitcoinpython.svg?branch=master" alt="Build status">
+  <img src="https://img.shields.io/codecov/c/github/merc1er/bitcoinpython.svg?style=flat-square" alt="Code Coverage">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="MIT license">
 </p>
 
