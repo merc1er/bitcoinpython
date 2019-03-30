@@ -7,6 +7,13 @@
 <h3 align="center">BitcoinPython</h3>
 <h4 align="center">Bitcoin Cash Python library</h4>
 
+<p align="center">
+  <img src="https://img.shields.io/pypi/v/bitcoinpython.svg?style=flat-square" alt="BitcoinPython version">
+  <img src="https://img.shields.io/pypi/pyversions/bitcoinpython.svg?style=flat-square" alt="Python Versions">
+  <img src="https://travis-ci.org/merc1er/bitcoinpython.svg?branch=master" alt="Build status">
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="MIT license">
+</p>
+
 ## Quickstart
 
 BitcoinPython is so easy to use, in fact, you can do this:
