@@ -222,15 +222,14 @@ class TestPrivateKeyTestnet:
         initial = len(private_key.get_transactions())
         current = initial
         tries = 0
-        # FIXME: Changed jpy to satoshi and 1 to 10,000 since we don't yet
-        # have a rates API for BCH in place.
+
         private_key.send([(BITCOIN_CASHADDRESS_TEST, 10000, 'satoshi')])
 
-        while tries < 15:  # pragma: no cover
+        while tries < 180:  # pragma: no cover
             current = len(private_key.get_transactions())
             if current > initial:
                 break
-            time.sleep(5)
+            time.sleep(6)
             tries += 1
 
     def test_send(self):
@@ -240,9 +239,8 @@ class TestPrivateKeyTestnet:
         initial = private_key.balance
         current = initial
         tries = 0
-        # FIXME: Changed jpy to satoshi and 1 to 10,000 since we don't yet
-        # have a rates API for BCH in place.
-        private_key.send([('n2eMqTT929pb1RDNuqEnxdaLau1rxy3efi', 10000, 'satoshi')])
+
+        private_key.send([('n2eMqTT929pb1RDNuqEnxdaLau1rxy3efi', 1, 'jpy')])
 
         while tries < 10:  # pragma: no cover
             private_key.get_unspents()
