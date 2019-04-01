@@ -9,6 +9,11 @@ Version |version|.
 .. image:: https://img.shields.io/pypi/pyversions/bitcoinpython.svg?style=flat-square
     :target: https://pypi.org/project/bitcoinpython
 
+.. image:: https://travis-ci.org/merc1er/bitcoinpython.svg?branch=master
+    :target: https://travis-ci.org/merc1er/bitcoinpython
+
+.. image:: https://img.shields.io/codecov/c/github/merc1er/bitcoinpython.svg?style=flat-square
+
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
     :target: https://en.wikipedia.org/wiki/MIT_License
 
