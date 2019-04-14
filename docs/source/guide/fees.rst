@@ -3,7 +3,7 @@
 Fees
 ====
 
-For now, bitcoinpython provides a 4 satoshi/byte fee.
+For now, bitcoinpython provides a 2 satoshi/byte default fee.
 
 Transactions will likely be confirmed in the next block.
 
@@ -12,4 +12,4 @@ Transactions will likely be confirmed in the next block.
     >>> from bitcoinpython.network import get_fee
     >>>
     >>> get_fee()
-    4
+    2
